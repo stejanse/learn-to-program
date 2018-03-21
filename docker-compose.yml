@@ -1,0 +1,15 @@
+version: '2.3'
+
+services:
+
+  ruby-backend:
+    image: ruby-backend
+    ports:
+      - "4567:4567"
+
+  frontend:
+    image: frontend 
+    links:
+      - ruby-backend
+    ports:
+      - "80:8080"
